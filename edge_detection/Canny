@@ -1,0 +1,12 @@
+import cv2
+
+img = cv2.imread("trip.jpg")
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+cv2.imshow("gray",gray)
+cv2.waitKey(0)
+
+canny_high =cv2.Canny(gray, 247,252) # Canny(gray_image,threshold_low,threshold_up)
+cv2.imshow("high",canny_high)
+cv2.imwrite("Canny_trip.jpg",canny_high)
+cv2.waitKey(0)
